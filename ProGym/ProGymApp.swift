@@ -1,20 +1,25 @@
-//
-//  ProGymApp.swift
-//  ProGym
-//
-//  Created by Bastien Record on 31/10/2024.
-//
-
 import SwiftUI
+import CoreData
 
 @main
 struct ProGymApp: App {
-    let persistenceController = PersistenceController.shared
-
-    var body: some Scene {
+	let persistenceContainer: NSPersistentContainer = {
+		let container = NSPersistentContainer(name: "ProGym")
+		container.loadPersistentStores { description, error in
+			if let error = error as NSError? {
+				fatalError("Unresolved error \(error), \(error.userInfo)")
+			}
+		}
+		return container
+	}()
+	
+	var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+				.environment(
+					\.managedObjectContext,
+					 persistenceContainer.viewContext
+				)
         }
     }
 }
