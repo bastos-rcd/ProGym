@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0B28149E2CD514B7007B1585 /* NewPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B28149D2CD514B7007B1585 /* NewPlanView.swift */; };
+		0B2814A02CD515B7007B1585 /* NewWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B28149F2CD515B7007B1585 /* NewWorkoutView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		0B2814602CD401F0007B1585 /* ProGym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProGym.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B28149D2CD514B7007B1585 /* NewPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlanView.swift; sourceTree = "<group>"; };
+		0B28149F2CD515B7007B1585 /* NewWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +39,8 @@
 		0B2814572CD401F0007B1585 = {
 			isa = PBXGroup;
 			children = (
+				0B28149B2CD51459007B1585 /* Workout */,
+				0B28149A2CD51442007B1585 /* Plan */,
 				0B2814622CD401F0007B1585 /* ProGym */,
 				0B2814612CD401F0007B1585 /* Products */,
 			);
@@ -43,6 +52,22 @@
 				0B2814602CD401F0007B1585 /* ProGym.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0B28149A2CD51442007B1585 /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				0B28149D2CD514B7007B1585 /* NewPlanView.swift */,
+			);
+			path = Plan;
+			sourceTree = "<group>";
+		};
+		0B28149B2CD51459007B1585 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				0B28149F2CD515B7007B1585 /* NewWorkoutView.swift */,
+			);
+			path = Workout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B28149E2CD514B7007B1585 /* NewPlanView.swift in Sources */,
+				0B2814A02CD515B7007B1585 /* NewWorkoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
