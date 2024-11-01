@@ -8,14 +8,60 @@ struct HomeView: View {
 		sortDescriptors: [NSSortDescriptor(keyPath: \Exercise.name, ascending: true)]
 	) private var exercises: FetchedResults<Exercise>
 	
-	var body: some View{
-		NavigationView {
-			List {
-				ForEach(exercises) { exercise in
-					Text(exercise.name ?? "NONE")
+	@State private var showPlans: Bool = true
+	
+	var body: some View {
+		VStack {
+			HStack(spacing: 0) {
+				Button(action: {
+					showPlans = true
+				}) {
+					Text("PLANS")
+						.fontWeight(.bold)
+						.foregroundColor(showPlans ? Color.black : Color.gray)
+						
 				}
+				.padding()
+				.frame(maxWidth: .infinity)
+				.overlay(
+					Rectangle()
+						.frame(height: 2)
+						.foregroundColor(showPlans ? Color.black : Color.gray)
+						.padding(.top, 40)
+				)
+				
+				Button(action: {
+					showPlans = false
+				}) {
+					Text("WORKOUTS")
+						.fontWeight(.bold)
+						.foregroundColor(!showPlans ? Color.black : Color.gray)
+				}
+				.padding()
+				.frame(maxWidth: .infinity)
+				.overlay(
+					Rectangle()
+						.frame(height: 2)
+						.foregroundColor(!showPlans ? Color.black : Color.gray)
+						.padding(.top, 40)
+				)
 			}
-			.navigationTitle("Exercices")
+			
+			if showPlans {
+				Text("Plans")
+			}
+			else {
+				Text("Workouts")
+			}
+			
+			Spacer()
 		}
+	}
+}
+
+struct HomeView_Previews: PreviewProvider {
+	static var previews: some View {
+		HomeView()
+			.environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 	}
 }

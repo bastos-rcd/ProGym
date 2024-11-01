@@ -72,4 +72,10 @@ struct PersistenceController {
 			print("Error saving data: \(error)")
 		}
 	}
+	
+	static var preview: PersistenceController = {
+		let controller = PersistenceController(inMemory: true)
+		controller.populateStaticData()
+		return controller
+	}()
 }
