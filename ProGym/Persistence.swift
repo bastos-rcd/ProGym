@@ -6,7 +6,7 @@ struct PersistenceController {
 	let container: NSPersistentContainer
 	
 	init(inMemory: Bool = false){
-		container = NSPersistentContainer(name: "ProGymData")
+		container = NSPersistentContainer(name: "ProGym")
 		
 		if inMemory {
 			container.persistentStoreDescriptions.first?.url = URL(
