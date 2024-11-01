@@ -6,7 +6,7 @@
     </entity>
     <entity name="Exercise" representedClassName=".Exercise" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="picture" optional="YES" attributeType="Binary"/>
+        <attribute name="pictureUrl" optional="YES" attributeType="String"/>
         <relationship name="bodyPart" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BodyPart" inverseName="exercises" inverseEntity="BodyPart"/>
         <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="exercices" inverseEntity="Workout"/>
     </entity>
